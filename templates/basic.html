@@ -10,8 +10,8 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
   <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png'%}" rel="icon">
-  <link href="{% static 'assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -49,7 +49,7 @@
 
       <div class="profile">
         <img src="{% static 'assets/img/profile-img.jpg'%}" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Alex Smith</a></h1>
+        <h1 class="text-light"><a href="index.html">Welcome {{user.username}}</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
           <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -67,9 +67,12 @@
           <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
           <li><a href="/services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li> {% endcomment %}
           <li><a href="/contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-          <li><a href="/auth/signup" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Signup</span></a></li>
-          <li><a href="/auth/login" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Login</span></a></li>
-          <li><a href="/auth/logout" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Logout</span></a></li>
+          {% if not request.user.is_authenticated %}
+            <li><a href="/auth/signup" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Signup</span></a></li>
+            <li><a href="/auth/login" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Login</span></a></li>
+          {% else %}
+            <li><a href="/auth/logout" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Logout</span></a></li>
+          {% endif %}
         </ul>
       </nav><!-- .nav-menu -->
     </div>
