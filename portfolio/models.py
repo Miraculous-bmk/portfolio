@@ -13,7 +13,7 @@ class Contact(models.Model):
     
 class Blogs(models.Model):
     title=models.CharField(max_length=60)
-    description=models.TimeField()
+    description=models.TextField()
     authname=models.CharField(max_length=15)
     img=models.ImageField(upload_to='blog',blank=True, null=True)
     timeStamp=models.DateTimeField(auto_now_add=True)
