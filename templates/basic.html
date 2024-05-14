@@ -9,9 +9,9 @@
   </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-  {% comment %} <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
-  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon"> {% endcomment %}
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/wepik.png' %}" rel="icon">
+  <link href="{% static 'assets/img/wepik.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -48,7 +48,7 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="{% static 'assets/img/profile-img.jpg'%}" alt="" class="img-fluid rounded-circle">
+        <img src="{% static 'assets/img/IMG_0468.PNG'%}" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="index.html">Welcome {{user.username}}</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -63,9 +63,7 @@
         <ul>
           <li><a href="/" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="/about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          {% comment %} <li><a href="/resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-          <li><a href="/services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li> {% endcomment %}
+          <li><a href="/blog" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Blog</span></a></li>
           <li><a href="/contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
           {% if not request.user.is_authenticated %}
             <li><a href="/auth/signup" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Signup</span></a></li>

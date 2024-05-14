@@ -1,12 +1,16 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from portfolio.models import Contact
+from portfolio.models import Contact,Blogs
 
 # Create your views here.
 def home(request):
     return render(request, "home.html")
 def about(request):
     return render(request, "about.html")
+def handleblog(request):
+    posts=Blogs.objects.all()
+    context={"posts": posts}
+    return render(request, "blog.html", context)
 def contact(request):
     if request.method=="POST":
         f_name=request.POST.get('name')
